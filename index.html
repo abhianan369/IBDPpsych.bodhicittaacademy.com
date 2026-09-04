@@ -1,0 +1,297 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free 2027 IA Starter Kit — IB Psychology | Bodhicitta Academy</title>
+<meta name="description" content="The IB Psychology IA is now a research proposal. Get the free Starter Kit: all four criteria unpacked, 20 topic ideas and a fill-in-the-blanks skeleton.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Fraunces:ital,opsz,wght@1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script>
+/* =====================================================================
+   SETUP — three lines to change before this page goes live.
+   1. ENDPOINT  Where enquiries are sent. Google Apps Script web app URL,
+                Formspree endpoint, or your own API. Leave '' to test.
+   2. KIT_URL   Public link to IA_Starter_Kit.pdf once you have uploaded it.
+   3. WHATSAPP  Your number in international format, digits only.
+   ===================================================================== */
+const CONFIG = {
+  ENDPOINT: 'https://script.google.com/macros/s/AKfycbx0pOHtXnRnYHbcHdbEs0sGsSJ1jCXwlyOJ9m3odjPwu9phPpPu81jjj5_COR4RKw29/exec',
+  KIT_URL:  'https://drive.google.com/uc?export=download&id=1SY4DM11769OvPMCoq8nDcpuADMQx1dY2',
+  WHATSAPP: '919337119339'
+};
+</script>
+
+<style>
+:root{
+  --ink:#120A28; --ink2:#1B1038; --plum:#3A1D6E; --plumLite:#553094;
+  --amber:#FFB627; --amberSoft:rgba(255,182,39,.12); --mint:#5EEAD4;
+  --paper:#FFF8EE; --lilac:#C4B4E8; --dim:#9A8ABE; --line:rgba(196,180,232,.2);
+  --err:#FF8A8A;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font-family:Inter,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;line-height:1.65;overflow-x:hidden}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+section{padding:88px 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0}
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;line-height:1.06;font-weight:800}
+h1{font-size:clamp(38px,6.4vw,72px);max-width:17ch}
+h2{font-size:clamp(28px,3.9vw,44px);max-width:20ch}
+h3{font-size:20px;font-weight:600;letter-spacing:-.015em}
+p{font-size:17px;color:var(--lilac);max-width:62ch}
+.big{font-size:19px}
+
+.top{padding:26px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.02em}
+.logo span{color:var(--amber)}
+.top small{color:var(--dim);font-size:13px}
+
+.hero{position:relative;padding:64px 0 96px}
+.hero::before{content:"";position:absolute;width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(122,74,0,.55),transparent 66%);
+  top:-420px;right:-320px;filter:blur(90px);pointer-events:none;z-index:0}
+.hero>*{position:relative;z-index:1}
+.eyebrow{font-family:Fraunces,serif;font-style:italic;font-size:19px;color:var(--amber);margin-bottom:20px}
+.hero p{margin-top:26px;font-size:19px;max-width:56ch}
+.cta{display:inline-block;margin-top:34px;background:var(--amber);color:#2A1600;
+  font-weight:600;font-size:17px;padding:16px 34px;border-radius:999px;text-decoration:none;
+  border:0;cursor:pointer;font-family:Inter,sans-serif;transition:transform .16s,background .16s}
+.cta:hover{background:#FFC94D;transform:translateY(-2px)}
+.cta:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+.beneath{margin-top:16px;font-size:14px;color:var(--dim)}
+
+.pains{list-style:none;margin-top:36px;display:grid;gap:14px;max-width:70ch}
+.pains li{padding-left:34px;position:relative;font-size:17.5px;color:var(--paper)}
+.pains li::before{content:"";position:absolute;left:0;top:11px;width:18px;height:2px;background:var(--amber)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:44px}
+.card{background:rgba(85,48,148,.16);border:1px solid var(--line);border-radius:18px;padding:26px 26px 28px}
+.card .no{font-family:Fraunces,serif;font-style:italic;font-size:30px;color:var(--amber);display:block;margin-bottom:10px}
+.card p{font-size:15.5px;margin-top:8px}
+
+.formwrap{background:linear-gradient(160deg,rgba(85,48,148,.3),rgba(27,16,56,.6));
+  border:1px solid rgba(255,182,39,.32);border-radius:26px;padding:clamp(28px,4vw,52px);margin-top:12px}
+.formwrap h2{max-width:24ch}
+.formwrap>p{margin-top:14px}
+form{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+label{font-size:14px;font-weight:500;color:var(--lilac)}
+label .req{color:var(--amber)}
+input,select{font-family:Inter,sans-serif;font-size:16px;color:var(--paper);
+  background:rgba(18,10,40,.6);border:1px solid var(--line);border-radius:11px;padding:13px 15px;width:100%}
+input::placeholder{color:#6F6191}
+input:focus,select:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:transparent}
+input[aria-invalid="true"]{border-color:var(--err)}
+select option{background:#1B1038;color:var(--paper)}
+.err{font-size:13px;color:var(--err);min-height:0}
+.consent{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;
+  background:rgba(18,10,40,.45);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.consent input{width:19px;height:19px;flex:0 0 19px;margin-top:2px;accent-color:var(--amber)}
+.consent label{font-size:14.5px;line-height:1.55;color:var(--lilac)}
+.submit{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:4px}
+.submit small{font-size:13px;color:var(--dim);max-width:40ch}
+button.cta[disabled]{opacity:.6;cursor:wait;transform:none}
+
+.done{display:none;text-align:center;padding:14px 0}
+.done.on{display:block}
+.done .tick{width:64px;height:64px;border-radius:50%;background:var(--amber);color:#2A1600;
+  display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;margin:0 auto 22px}
+.done h2{margin:0 auto;max-width:18ch}
+.done p{margin:16px auto 0}
+.done .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.ghost{display:inline-block;padding:15px 28px;border-radius:999px;border:1px solid rgba(196,180,232,.4);
+  color:var(--paper);text-decoration:none;font-weight:500;font-size:16px}
+.ghost:hover{border-color:var(--amber);color:var(--amber)}
+
+details{border-top:1px solid var(--line);padding:20px 0}
+details summary{cursor:pointer;font-size:18px;font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:20px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";color:var(--amber);font-size:24px;line-height:1}
+details[open] summary::after{content:"\2013"}
+details p{margin-top:12px;font-size:16px}
+
+footer{border-top:1px solid var(--line);padding:44px 0 60px;color:var(--dim);font-size:14px}
+footer p{font-size:14px;color:var(--dim);max-width:74ch}
+footer a{color:var(--lilac)}
+.setup{display:none;background:#4A1B1B;border:1px solid #FF8A8A;color:#FFD9D9;
+  padding:14px 20px;font-size:14px;border-radius:12px;margin:20px 0}
+.setup.on{display:block}
+@media (max-width:700px){form{grid-template-columns:1fr}section{padding:64px 0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <div class="logo">Bodhicitta <span>Academy</span></div>
+    <small>IB Diploma Programme &middot; Psychology &middot; New Delhi</small>
+  </div>
+  <div class="setup" id="setup">Setup needed: open this file and fill in <b>CONFIG.ENDPOINT</b> so enquiries are delivered. Until then submissions are logged to the browser console only.</div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">First examinations, May 2027</div>
+    <h1>The IB Psychology IA changed completely. Your proposal shouldn't suffer for it.</h1>
+    <p class="big">The new Internal Assessment is a research proposal, not an experiment write-up. There are no past examples to learn from, and your seniors' IAs are useless as models. This kit is the map.</p>
+    <a class="cta" href="#get">Get the free Starter Kit</a>
+    <div class="beneath">13 pages. Built on the 2027 guide. No cost, no catch.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>If you're in the first new-syllabus cohort, this will sound familiar</h2>
+    <ul class="pains">
+      <li>You have to design a study you'll never run, and nobody has explained what that means in practice.</li>
+      <li>The proposal has to connect to your class practicals, but the link isn't obvious.</li>
+      <li>Choosing a topic across four contexts feels like guesswork.</li>
+      <li>Nobody can show you a top-marks proposal, because none exist yet.</li>
+    </ul>
+    <p style="margin-top:34px">That isn't your fault. It's what year one of any new syllabus looks like. It's also where the students who move early pull ahead of everyone else.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What's inside the kit</h2>
+    <div class="grid">
+      <div class="card"><span class="no">01</span><h3>The task, decoded</h3><p>What "research proposal, not study" actually changes, plus the weighting, word limit and what sits outside it.</p></div>
+      <div class="card"><span class="no">02</span><h3>All four criteria</h3><p>Introduction, research methodology, data collection and discussion, unpacked into what each one must contain.</p></div>
+      <div class="card"><span class="no">03</span><h3>Choosing your method</h3><p>Experiment, interview, observation or survey, with the subtypes you have to name and defend.</p></div>
+      <div class="card"><span class="no">04</span><h3>20 topic ideas</h3><p>Five for each context, written as provocations you can adapt to your own school or community.</p></div>
+      <div class="card"><span class="no">05</span><h3>A proposal skeleton</h3><p>Fifteen lines to fill in before you write a paragraph. Any line you can't complete is the part that isn't ready.</p></div>
+      <div class="card"><span class="no">06</span><h3>What gets rejected</h3><p>The topics that are ruled out, the presentation rules, and the seven mistakes that cost the most marks.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="get">
+  <div class="wrap">
+    <div class="formwrap">
+      <div id="gate">
+        <h2>Tell us where to send it</h2>
+        <p>We'll email the kit straight away and let you know when the next free IA Clinic runs. Nothing else.</p>
+        <form id="enq" novalidate>
+          <div class="field"><label for="name">Full name <span class="req">*</span></label>
+            <input id="name" name="name" autocomplete="name" placeholder="Vrinda Sharma"><div class="err" id="e-name"></div></div>
+          <div class="field"><label for="email">Email <span class="req">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com"><div class="err" id="e-email"></div></div>
+          <div class="field"><label for="phone">Phone or WhatsApp <span class="req">*</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210"><div class="err" id="e-phone"></div></div>
+          <div class="field"><label for="school">School <span class="req">*</span></label>
+            <input id="school" name="school" autocomplete="organization" placeholder="Pathways World School"><div class="err" id="e-school"></div></div>
+          <div class="field"><label for="city">City <span class="req">*</span></label>
+            <input id="city" name="city" autocomplete="address-level2" placeholder="Gurugram"><div class="err" id="e-city"></div></div>
+          <div class="field"><label for="country">Country <span class="req">*</span></label>
+            <input id="country" name="country" autocomplete="country-name" placeholder="India"><div class="err" id="e-country"></div></div>
+          <div class="field"><label for="level">Level</label>
+            <select id="level" name="level"><option value="">Select</option><option>SL</option><option>HL</option><option>Not decided yet</option></select></div>
+          <div class="field"><label for="session">Exam session</label>
+            <select id="session" name="session"><option value="">Select</option><option>May 2027</option><option>May 2028</option><option>I'm a teacher</option><option>I'm a parent</option></select></div>
+          <div class="field full" style="position:absolute;left:-9999px" aria-hidden="true">
+            <label for="company">Company</label>
+            <input id="company" name="company" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="consent">
+            <input type="checkbox" id="consent" name="consent">
+            <label for="consent">Send me the Starter Kit and occasional IB Psychology updates by email and WhatsApp. I can unsubscribe any time.</label>
+          </div>
+          <div class="err full" id="e-consent"></div>
+          <div class="submit">
+            <button type="submit" class="cta" id="go">Send me the kit</button>
+            <small>We never sell or share your details. Used only to send the kit and course updates.</small>
+          </div>
+        </form>
+      </div>
+
+      <div class="done" id="done">
+        <div class="tick" aria-hidden="true">&#10003;</div>
+        <h2>Your kit is on its way</h2>
+        <p>Check your inbox, including promotions and spam. You can also download it right now.</p>
+        <div class="row">
+          <a class="cta" id="dl" href="#">Download the Starter Kit</a>
+          <a class="ghost" id="wa" href="#" target="_blank" rel="noopener">Ask a question on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Questions</h2>
+    <details><summary>Is this for SL or HL?</summary><p>Both. Under the 2027 syllabus the research proposal IA is the same task at both levels. It carries 30% of your grade at SL and 20% at HL.</p></details>
+    <details><summary>I'm in DP1, sitting exams in 2028. Is it too early?</summary><p>The opposite. Thinking about your population and problem early is the single biggest advantage the new format offers, because the proposal rewards depth of decision-making rather than last-minute writing.</p></details>
+    <details><summary>Is the kit really free?</summary><p>Yes, and so is the IA Clinic. We run paid online batches, one-to-one IA mentoring and exam crash courses, but you'll never need any of them to use this.</p></details>
+    <details><summary>Do you guarantee a 7?</summary><p>No, and be wary of anyone who does. What we offer is guidance built on the current syllabus and honest feedback on your work.</p></details>
+    <details><summary>I'm not in Delhi.</summary><p>All our IB Psychology teaching runs live online, for students across India and abroad.</p></details>
+    <details><summary>What do you do with my details?</summary><p>We email you the kit and occasional course updates. We don't sell or share your information, and every email has an unsubscribe link. Write to us and we'll delete your record.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b style="color:var(--paper)">Bodhicitta Academy</b> &middot; New Delhi &middot; Nurturing hearts. Awakening potential.</p>
+    <p style="margin-top:12px">Bodhicitta Academy is an independent coaching provider and is not affiliated with, endorsed by, or connected to the International Baccalaureate Organization. All materials are original and produced in-house.</p>
+  </div>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+if(!CONFIG.ENDPOINT) $('setup').classList.add('on');
+$('dl').href = CONFIG.KIT_URL;
+$('wa').href = 'https://wa.me/' + CONFIG.WHATSAPP + '?text=' + encodeURIComponent('Hi, I just downloaded the 2027 IA Starter Kit and have a question.');
+
+const REQ = {name:'Enter your name', email:'Enter a valid email', phone:'Enter a contact number',
+             school:'Enter your school', city:'Enter your city', country:'Enter your country'};
+
+function clearErr(k){ $('e-'+k).textContent=''; const f=$(k); if(f) f.removeAttribute('aria-invalid'); }
+Object.keys(REQ).forEach(k => $(k).addEventListener('input', ()=>clearErr(k)));
+$('consent').addEventListener('change', ()=>{ $('e-consent').textContent=''; });
+
+function validate(){
+  let first = null;
+  for(const k in REQ){
+    const v = $(k).value.trim();
+    let bad = !v;
+    if(k==='email' && v) bad = !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+    if(k==='phone' && v) bad = (v.replace(/\D/g,'').length < 8);
+    if(bad){ $('e-'+k).textContent = REQ[k]; $(k).setAttribute('aria-invalid','true'); first = first || $(k); }
+    else clearErr(k);
+  }
+  if(!$('consent').checked){ $('e-consent').textContent = 'Please tick the box so we can send you the kit'; first = first || $('consent'); }
+  if(first){ first.focus({preventScroll:true}); first.scrollIntoView({block:'center'}); return false; }
+  return true;
+}
+
+$('enq').addEventListener('submit', async e => {
+  e.preventDefault();
+  if(!validate()) return;
+  const btn = $('go'); btn.disabled = true; btn.textContent = 'Sending…';
+  const data = {};
+  ['name','email','phone','school','city','country','level','session'].forEach(k => data[k] = $(k).value.trim());
+  data.consent = true;
+  data.company = $('company').value;
+  data.source = 'IA Starter Kit landing page';
+  data.submitted_at = new Date().toISOString();
+
+  try{
+    if(CONFIG.ENDPOINT){
+      /* text/plain keeps this a "simple" request, so the browser skips the
+         CORS preflight that Apps Script web apps cannot answer. */
+      await fetch(CONFIG.ENDPOINT, {method:'POST',
+        headers:{'Content-Type':'text/plain;charset=utf-8'},
+        body: JSON.stringify(data)});
+    } else {
+      console.log('Enquiry captured (no endpoint configured):', data);
+    }
+  } catch(err){
+    console.error('Submit failed:', err);
+  }
+  $('gate').style.display = 'none';
+  $('done').classList.add('on');
+  $('done').scrollIntoView({block:'center'});
+});
+</script>
